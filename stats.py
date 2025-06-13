@@ -27,7 +27,7 @@ def get_character_count(file_str):
 
 def get_character_count(file_str):
     lowercase_file_str = file_str.lower()
-    character_count = Counter(lowercase_file_str)
+    character_count = Counter(char for char in lowercase_file_str if char.isalpha())
     character_count = dict(
         sorted(character_count.items(), key=lambda item: item[1], reverse=True)
     )
