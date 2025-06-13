@@ -3,11 +3,18 @@ from read_book import get_book_text
 
 
 def main():
-    book_contents = get_book_text("books/frankenstein.txt")
+    book_title = "frankenstein.txt"
+    book_contents = get_book_text(f"books/{book_title}")
     word_count = get_words_count(book_contents)
     character_count = get_character_count(book_contents)
-    print(f"{word_count} words found in the document")
-    print(f"Chacter Count {character_count}")
+
+    print("============ BOOKBOT ============")
+    print(f"Analyzing book found at books/{book_title}...")
+    print("----------- Word Count ----------")
+    print(f"Found {word_count} total words")
+    print("--------- Character Count -------")
+    for key, value in character_count.items():
+        print(f"{key}: {value}")
 
 
 main()
